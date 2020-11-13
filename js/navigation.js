@@ -19,7 +19,7 @@ var numberOfTestBlocks = 4;
 
 function getInputData() {
 	id = document.getElementById('ID').value;
-	setupData = [id, ppi];
+	setupData = [id];
 	setupDisplay();
 }
 
