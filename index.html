@@ -25,19 +25,68 @@
 			<center>
 			<br />
 			<img src="images/Logo.png" id='logo' width="25%"/>
-			<h4>Thank you for participating in this Experiment.</h4>
-			<p>Please enter the ID number:</p>
+			<h4>This testing utility is designed for use with Firefox.</h4>
+			<p id="browserWarning">Other browsers are UNSUPPORTED but may work.  Internet Explorer will yield INACCURATE results and is NOT recommended.</p>
+			<p>Please enter the following information:</p>
 			</center>
 			<form name="form" id="form">
 				<label>ID:</label>
 				<input type="text" name="ID" id="ID" />
+				<br />
+				<label>Age:</label>
+				<input type="text" name="age" id="age" />
+				<br />
+				<label>Gender:</label>
+				<input type="radio" name="gender" value="M" />Male
+				<input type="radio" name="gender" value="F" />Female
+				<br />
+				<label>Session #:</label>
+				<input type="text" name="sessionNumber" id="sessionNumber" />
+				<br />
+				<label>Study ID:</label>
+				<input type="text" name="studyID" id="studyID" />
+				<br />
+				<label>Group ID:</label>
+				<input type="text" name="groupID" id="groupID" />
+				<br />
+				<label>Target Type:</label>
+				<select name="targetType" id="targetType" size="1">
+				</select>
+				<br />
+				<label>Monitor Diagonal:</label>
+				<select name="monitorSize" id="monitorSize">
+					<option value="7">7"</option>
+					<option value="8">8"</option>
+					<option value="9">9"</option>
+					<option value="10">10"</option>
+					<option value="11">11"</option>
+					<option value="12">12"</option>
+					<option value="13">13"</option>
+					<option value="14">14"</option>
+					<option value="15">15"</option>
+					<option value="16">16"</option>
+					<option value="17" selected>17"</option>
+					<option value="18">18"</option>
+					<option value="19">19"</option>
+					<option value="20">20"</option>
+					<option value="21">21"</option>
+					<option value="22">22"</option>
+					<option value="23">23"</option>
+					<option value="24">24"</option>
+					<option value="25">25"</option>
+					<option value="26">26"</option>
+					<option value="27">27"</option>
+					<option value="28">28"</option>
+					<option value="29">29"</option>
+					<option value="30">30"</option>
+				</select>
 				<br />
 			</form>
 			<center>
 			<p id="fullscreenNote">For best experience, use fullscreen (<span class='fullscreenKey'>F11</span>)</p>
 			</center>
 			<button class="previousButton" onclick="document.form.reset();">Clear</button>
-			<button class="nextButton" onclick="pushView('instructionPage1');">Next</button>
+			<button class="nextButton" onclick="submitForm();">Next</button>
 <!--			<input id="nextButton" class="nextButton" type="button" name="next" value="Next" onclick="submitForm();" />-->
 		</div>
 		
@@ -90,7 +139,7 @@
 		</div>
 		
 		<div id="instructionPage3" class="instructionsPage" style="visibility:hidden">
-			<p>Sometimes, one or more asterisks <img src="images/star.PNG" class="cue imageintext" /> will appear shortly before the <span class='targetTypeRef'>target</span>s.</p>
+			<p>Sometimes, one or more asterisks <img src="images/star.png" class="cue imageintext" /> will appear shortly before the <span class='targetTypeRef'>target</span>s.</p>
 			<p>When they are presented, the asterisks always appear exactly one half second before the <span class='targetTypeRef'>target</span>s.</p>
 			<p>If only one asterisk appears, and it is above or below the cross, it also tells you the location in which the <span class='targetTypeRef'>target</span>s will appear.</p>
 			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
@@ -110,19 +159,18 @@
 			<p>The first block is for practice, and takes about 2 minutes.</p>
 			<p>If you make a mistake during the practice block, an error message will appear.  If no error message appears, you will know that you responded correctly.</p>
 			<p>No feedback is given during the 2 test blocks.</p>
+			<p>Please tell the test supervisor if you are ready to begin.</p>
 			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
 			<input class="nextButton" type="button" name="next" value="Next" onclick="areYouReady();" />
-		</div> 
-	
-		<div id="testPageContainer">
-			<center>
+		</div>
+		<div id="testPageContainer" style="visibility:hidden">
 			<div id="testPage" style="visibility:hidden">
 				<center>
 				<!--Blank View-->
-				<div id="blankView" class="display">
+				<div id="blankView" class="display" style="visibility:hidden">
 				</div>
 				<!--No Cue-->
-				<div id="cueType10" class="display">
+				<div id="cueType10" class="display" style="visibility:hidden">
 					<div class="frameMargin"></div>
 					<div class="target"></div>
 					<div class="spacing"></div>
@@ -136,7 +184,7 @@
 					<div class="frameMargin"></div>
 					<div class="target"></div>
 					<div class="spacing"></div>
-					<img src="images/star.PNG" class="cue" />
+					<img src="images/star.png" class="cue" />
 					<div class="spacing"></div>
 					<div class="target"></div>
 					<div class="frameMargin"></div>
@@ -144,17 +192,17 @@
 				<!--Double Cue-->
 				<div id="cueType30" class="display" style="visibility:hidden">
 					<div class="frameMargin"></div>
-					<img src="images/star.PNG" class="cue" />
+					<img src="images/star.png" class="cue" />
 					<div class="spacing"></div>
 					<img src="images/plus.png" class="cue" />
 					<div class="spacing"></div>
-					<img src="images/star.PNG" class="cue" />
+					<img src="images/star.png" class="cue" />
 					<div class="frameMargin"></div>
 				</div>
 				<!--Top Cue-->
 				<div id="cueType4UP" class="display" style="visibility:hidden">
 					<div class="frameMargin"></div>
-					<img src="images/star.PNG" class="cue" />
+					<img src="images/star.png" class="cue" />
 					<div class="spacing"></div>
 					<img src="images/plus.png" class="cue" />
 					<div class="spacing"></div>
@@ -168,7 +216,7 @@
 					<div class="spacing"></div>
 					<img src="images/plus.png" class="cue" />
 					<div class="spacing"></div>
-					<img src="images/star.PNG" class="cue" />
+					<img src="images/star.png" class="cue" />
 					<div class="frameMargin"></div>
 				</div>
 				<!--Top Congruent Right-->
@@ -256,7 +304,6 @@
 				<div id="practiceFeedbackUP" class="practiceFeedback"></div>
 				<div id="practiceFeedbackDOWN" class="practiceFeedback"></div>
 			</div>
-			</center>
 		</div>
 		<div id="exportPage" class="instructionsPage" style="visibility:hidden">
 			<center>
