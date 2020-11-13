@@ -23,12 +23,37 @@
 	<div id="content">
 		<div id="formInput" class="instructionsPage">
 			<center>
+			<br />
+			<img src="images/Logo.png" id='logo' width="25%"/>
+			<h4>This testing utility is designed for use with Firefox.</h4>
+			<p id="browserWarning">Other browsers are UNSUPPORTED but may work.  Internet Explorer will yield INACCURATE results and is NOT recommended.</p>
+			<p>Please enter the following information:</p>
+			</center>
 			<form name="form" id="form">
 				<label>ID:</label>
 				<input type="text" name="ID" id="ID" />
-				<br />	
+				<br />
+				<label>Age:</label>
+				<input type="text" name="age" id="age" />
+				<br />
+				<label>Gender:</label>
+				<input type="radio" name="gender" value="M" />Male
+				<input type="radio" name="gender" value="F" />Female
+				<br />
+				<label>Session #:</label>
+				<input type="text" name="sessionNumber" id="sessionNumber" />
+				<br />
+				<label>Study ID:</label>
+				<input type="text" name="studyID" id="studyID" />
+				<br />
+				<label>Group ID:</label>
+				<input type="text" name="groupID" id="groupID" />
+				<br />
+				<label>Target Type:</label>
+				<select name="targetType" id="targetType" size="1">
+				</select>
+				<br />
 			</form>
-			</center>	
 			<center>
 			<p id="fullscreenNote">For best experience, use fullscreen (<span class='fullscreenKey'>F11</span>)</p>
 			</center>
