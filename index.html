@@ -25,9 +25,6 @@
 			<center>
 			<br />
 			<img src="images/Logo.png" id='logo' width="25%"/>
-			<h4>This testing utility is designed for use with Firefox.</h4>
-			<p id="browserWarning">Other browsers are UNSUPPORTED but may work.  Internet Explorer will yield INACCURATE results and is NOT recommended.</p>
-			<p>Please enter the following information:</p>
 			</center>
 			<form name="form" id="form">
 				<label>ID:</label>
@@ -38,8 +35,8 @@
 			<p id="fullscreenNote">For best experience, use fullscreen (<span class='fullscreenKey'>F11</span>)</p>
 			</center>
 			<button class="previousButton" onclick="document.form.reset();">Clear</button>
-			<button class="nextButton" onclick="submitForm();">Next</button>
-			<input id="nextButton" class="nextButton" type="button" name="next" value="Next" onclick="submitForm();" />
+			<button class="nextButton" onclick="pushView('instructionPage1');">Next</button>
+<!--			<input id="nextButton" class="nextButton" type="button" name="next" value="Next" onclick="submitForm();" />-->
 		</div>
 		
 		<div id="instructionPage1" class="instructionsPage" style="visibility:hidden">
