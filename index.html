@@ -26,7 +26,7 @@
 			<br />
 			<img src="images/Logo.png" id='logo' width="25%"/>
 			<h4>Thank you for participating in this Experiment.</h4>
-			<p>Please enter the ID number you were given in the survey:</p>
+			<p>Please enter the ID number:</p>
 			</center>
 			<form name="form" id="form">
 				<label>ID:</label>
@@ -113,17 +113,16 @@
 			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
 			<input class="nextButton" type="button" name="next" value="Next" onclick="areYouReady();" />
 		</div> 
-		
-		<div id="formInput" class="instructionsPage" style="visibility:hidden">
-		</div>
+	
 		<div id="testPageContainer">
+			<center>
 			<div id="testPage" style="visibility:hidden">
 				<center>
 				<!--Blank View-->
 				<div id="blankView" class="display">
 				</div>
 				<!--No Cue-->
-				<div id="cueType10" class="display" style="visibility:hidden">
+				<div id="cueType10" class="display">
 					<div class="frameMargin"></div>
 					<div class="target"></div>
 					<div class="spacing"></div>
@@ -257,6 +256,7 @@
 				<div id="practiceFeedbackUP" class="practiceFeedback"></div>
 				<div id="practiceFeedbackDOWN" class="practiceFeedback"></div>
 			</div>
+			</center>
 		</div>
 		<div id="exportPage" class="instructionsPage" style="visibility:hidden">
 			<center>
